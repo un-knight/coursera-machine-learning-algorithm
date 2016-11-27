@@ -48,13 +48,14 @@ def gradient_descent(x, y, iterations, learning_rate):
 def plot_regression_process(cost_history, iterations):
     iter = np.array([i for i in range(100)])
     plt.plot(iter, cost_history[0:100], 'r-', linewidth=2.0)
-    plt.xlabel(r"Number of iterations ($\theta=0.1\ \ and\ \ iteration=400$)")
+    plt.xlabel(r"Number of iterations ($\alpha=0.1\ \ and\ \ iteration=400$)")
     plt.ylabel('cost J')
     plt.show()
 
 
 def normal_equation(x, y):
     part1 = np.dot(x.T, x)
+    # np.linalg.inv 求逆
     part2 = np.linalg.inv(part1)
     part3 = np.dot(part2, x.T)
     theta = np.dot(part3, y)

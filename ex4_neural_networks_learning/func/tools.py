@@ -50,3 +50,11 @@ def plot_100_images(X):
             plt.yticks(np.array([]))
 
     plt.show()
+
+
+def serialize(theta1, theta2):
+    return np.concatenate((np.ravel(theta1), np.ravel(theta2)))
+
+
+def deserialize(seq):
+    return seq[:25*401].reshape(25, 401), seq[25*401:].reshape(10, 26)

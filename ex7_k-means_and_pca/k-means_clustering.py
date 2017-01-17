@@ -17,8 +17,10 @@ def random_init(data, k):
     return m
 
 def main():
-    # visualize the data
     """
+    part1 k-means on data2
+    """
+    # visualize the data
     mat = sio.loadmat("./data/ex7data2.mat")
     data = pd.DataFrame(mat.get("X"), columns=['X1', 'X2'])
     # print("data2: \n", data.head())
@@ -35,15 +37,18 @@ def main():
     sns.lmplot('X1', 'X2', hue='kind', data=data_result, fit_reg=False)
     plt.title("k-means with sklearn")
     plt.show()
-    """
 
+    """
+    part2 image compression
+    """
     # Image compression
-    img = img_io.imread("./data/bird_small.png") / 255
+    img = img_io.imread("./data/bird_small.png") / 255.0
+    w, h = img.shape[1], img.shape[0]
     # img_io.imshow(img)
     # plt.show()
     # print(img.shape)
 
-    img_data = img.reshape(128*128, 3)
+    img_data = img.reshape(w*h, 3)
     # speed up computation by setting n_jobs=-1 to use all CPU kernels
     km = KMeans(n_clusters=16, n_jobs=-1)
     km.fit(img_data)
@@ -51,7 +56,7 @@ def main():
     # print(centroids, centroids.shape)
 
     result = km.predict(img_data)
-    compressed_img = centroids[result].reshape(128, 128, 3)
+    compressed_img = centroids[result].reshape(h, w, 3)
     fig, ax = plt.subplots(1, 2)
     ax[0].imshow(img)
     ax[1].imshow(compressed_img)

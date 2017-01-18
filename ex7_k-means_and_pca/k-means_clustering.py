@@ -19,7 +19,7 @@ def random_init(data, k):
 def main():
     """
     part1 k-means on data2
-    """
+
     # visualize the data
     mat = sio.loadmat("./data/ex7data2.mat")
     data = pd.DataFrame(mat.get("X"), columns=['X1', 'X2'])
@@ -36,7 +36,7 @@ def main():
     print(data_result.head())
     sns.lmplot('X1', 'X2', hue='kind', data=data_result, fit_reg=False)
     plt.title("k-means with sklearn")
-    plt.show()
+    plt.show()"""
 
     """
     part2 image compression

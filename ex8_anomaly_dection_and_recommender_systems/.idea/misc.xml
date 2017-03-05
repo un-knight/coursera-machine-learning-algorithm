@@ -20,13 +20,6 @@
     </entry>
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.5.2 (E:\Anaconda3\python.exe) (1)" project-jdk-type="Python SDK" />
-  <component name="PyConsoleOptionsProvider">
-    <option name="myPythonConsoleState">
-      <console-settings sdk-home="E:\Anaconda3\python.exe">
-        <option name="mySdkHome" value="E:\Anaconda3\python.exe" />
-      </console-settings>
-    </option>
-  </component>
   <component name="masterDetails">
     <states>
       <state key="ScopeChooserConfigurable.UI">
